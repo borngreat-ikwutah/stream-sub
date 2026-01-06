@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f9fafb;
+  --color-primary-100: #ffffff;
+  --color-primary-900: #1a1a1a;
+  --color-secondary-100: #666666;
+  --color-secondary-700: #4d4d4d;
+  --color-secondary-900: #b3b3b3;
+  --color-tertiary-100: #666666;
+  --color-tertiary-400: #4d4d4d;
+  --color-subtle-100: #cccccc;
+
+  --font-family-manrope: "Manrope", sans-serif;
+  --font-family-urbanist: "Urbanist", sans-serif;
+
+  --shadow-input: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  --shadow-cart:
+    0px 0px 0px 1px rgba(16, 24, 40, 0.18) inset,
+    0px -2px 0px 0px rgba(16, 24, 40, 0.05) inset,
+    0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  --shadow-button:
+    0px 0px 0px 1px rgba(12, 17, 29, 0.18),
+    inset 0px -2px 0px 0px rgba(12, 17, 29, 0.05),
+    0px 1px 2px 0px rgba(255, 255, 255, 0);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: var(--font-family-urbanist);
+  line-height: 1.5;
+  background: #ffffff;
+  scroll-behavior: smooth;
+  margin: 0;
+}
