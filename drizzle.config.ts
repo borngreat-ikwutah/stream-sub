@@ -1,17 +1,27 @@
-import { defineConfig } from 'drizzle-kit';
+import { defineConfig } from "drizzle-kit";
 
 export default defineConfig({
-  dialect: 'postgresql',
-  schema: './src/db/schema/index.ts',
-  out: './migrations',
+  // Use PostgreSQL dialect
+  dialect: "postgresql",
+
+  // Schema files location
+  schema: "./src/db/schema/index.ts",
+
+  // Migration output directory
+  out: "./drizzle",
+
+  // Database connection configuration
   dbCredentials: {
-    host: process.env.DB_HOST || 'localhost',
-    port: Number(process.env.DB_PORT) || 5432,
-    user: process.env.DB_USER || 'postgres',
-    password: process.env.DB_PASSWORD || 'password',
-    database: process.env.DB_NAME || 'admin_dashboard',
-    ssl: process.env.NODE_ENV === 'production',
+    url:
+      process.env.DATABASE_URL ||
+      `postgresql://${process.env.DB_USER || "postgres"}:${process.env.DB_PASSWORD || "password"}@${process.env.DB_HOST || "localhost"}:${process.env.DB_PORT || 5432}/${process.env.DB_NAME || "stream_sub_dev"}`,
   },
+
+  // Enhanced configuration options
   verbose: true,
   strict: true,
+
+  // Additional PostgreSQL specific options
+  schemaFilter: ["public"],
+  tablesFilter: ["!__drizzle_migrations__"],
 });

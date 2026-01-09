@@ -1,9 +1,11 @@
-// This file will export all database schemas
-// Currently empty - schemas will be added as needed
+// Database schema exports
+// This file exports all database schemas and types
 
-// export * from './users';
-// export * from './products';
-export * from "./categories";
-
-// Re-export for migrations
-export const schemas = {};
+// Export all table definitions
+export * from "./users";
+export * from "./creators";
+export * from "./subscriptions";
+export * from "./credentials";
+export * from "./events";
+export * from "./withdrawals";
+export * from "./tips";

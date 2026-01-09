@@ -116,3 +116,9 @@ Thumbs.db
 
 # Drizzle
 drizzle/
+
+# Hardhat
+artifacts/
+cache/
+typechain-types/
+ignition/deployments/
