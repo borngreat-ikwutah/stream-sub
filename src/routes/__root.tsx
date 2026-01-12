@@ -4,6 +4,7 @@ import { TanStackDevtools } from "@tanstack/react-devtools";
 
 import appCss from "../styles/app.css?url";
 import { themeScript, ThemeProvider } from "../lib/theme-provider";
+import { Web3Provider } from "../lib/web3-provider";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -37,20 +38,22 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
-        <ThemeProvider defaultTheme="dark">
-          {children}
-          <TanStackDevtools
-            config={{
-              position: "bottom-right",
-            }}
-            plugins={[
-              {
-                name: "Tanstack Router",
-                render: <TanStackRouterDevtoolsPanel />,
-              },
-            ]}
-          />
-        </ThemeProvider>
+        <Web3Provider>
+          <ThemeProvider defaultTheme="dark">
+            {children}
+            <TanStackDevtools
+              config={{
+                position: "bottom-right",
+              }}
+              plugins={[
+                {
+                  name: "Tanstack Router",
+                  render: <TanStackRouterDevtoolsPanel />,
+                },
+              ]}
+            />
+          </ThemeProvider>
+        </Web3Provider>
         <Scripts />
       </body>
     </html>
